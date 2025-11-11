@@ -1,0 +1,787 @@
+/* Theme CSS Variables */
+:root {
+  /* Light Theme Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --border-color: #e2e8f0;
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  
+  /* Accent Colors (will be overridden by ThemeContext) */
+  --accent-color: #3b82f6;
+  --accent-color-light: #3b82f620;
+  --accent-color-dark: #3b82f680;
+  
+  /* Font Size */
+  --base-font-size: 16px;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border-color: #334155;
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+}
+
+/* Auto Theme - follows system preference */
+[data-theme="auto"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --border-color: #e2e8f0;
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-theme="auto"] {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-tertiary: #334155;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+  }
+}
+
+/* Apply theme variables to common elements */
+body {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  font-size: var(--base-font-size);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Override common Tailwind classes with theme variables */
+.bg-white {
+  background-color: var(--bg-primary) !important;
+}
+
+.bg-gray-50 {
+  background-color: var(--bg-secondary) !important;
+}
+
+.bg-gray-100 {
+  background-color: var(--bg-tertiary) !important;
+}
+
+.text-gray-800 {
+  color: var(--text-primary) !important;
+}
+
+.text-gray-700 {
+  color: var(--text-primary) !important;
+}
+
+.text-gray-600 {
+  color: var(--text-secondary) !important;
+}
+
+.text-gray-500 {
+  color: var(--text-secondary) !important;
+}
+
+.text-gray-400 {
+  color: var(--text-muted) !important;
+}
+
+.border-gray-200 {
+  border-color: var(--border-color) !important;
+}
+
+.border-gray-300 {
+  border-color: var(--border-color) !important;
+}
+
+/* Override specific component backgrounds */
+.min-h-screen {
+  background-color: var(--bg-primary) !important;
+}
+
+.bg-gray-50 {
+  background-color: var(--bg-secondary) !important;
+}
+
+/* Override card backgrounds */
+.shadow-md {
+  background-color: var(--bg-primary) !important;
+  box-shadow: var(--shadow) !important;
+}
+
+.shadow-lg {
+  background-color: var(--bg-primary) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+/* Override all div backgrounds */
+div {
+  background-color: inherit;
+}
+
+/* Override specific Tailwind classes that might override our theme */
+.bg-white {
+  background-color: var(--bg-primary) !important;
+}
+
+.bg-gray-50 {
+  background-color: var(--bg-secondary) !important;
+}
+
+.bg-gray-100 {
+  background-color: var(--bg-tertiary) !important;
+}
+
+/* Override text colors for better contrast */
+.text-gray-900 {
+  color: var(--text-primary) !important;
+}
+
+.text-gray-800 {
+  color: var(--text-primary) !important;
+}
+
+.text-gray-700 {
+  color: var(--text-primary) !important;
+}
+
+.text-gray-600 {
+  color: var(--text-secondary) !important;
+}
+
+.text-gray-500 {
+  color: var(--text-secondary) !important;
+}
+
+.text-gray-400 {
+  color: var(--text-muted) !important;
+}
+
+/* Override borders */
+.border-gray-200 {
+  border-color: var(--border-color) !important;
+}
+
+.border-gray-300 {
+  border-color: var(--border-color) !important;
+}
+
+.border-gray-400 {
+  border-color: var(--border-color) !important;
+}
+
+/* Override main container backgrounds */
+.min-h-screen {
+  background-color: var(--bg-primary) !important;
+}
+
+.bg-gray-50 {
+  background-color: var(--bg-secondary) !important;
+}
+
+/* Override sidebar backgrounds */
+.bg-white {
+  background-color: var(--bg-primary) !important;
+}
+
+/* Override table backgrounds */
+.bg-gray-50 {
+  background-color: var(--bg-secondary) !important;
+}
+
+/* Override modal backgrounds */
+.bg-white {
+  background-color: var(--bg-primary) !important;
+}
+
+/* Override form backgrounds */
+.bg-white {
+  background-color: var(--bg-primary) !important;
+}
+
+/* Override button backgrounds */
+.bg-blue-600 {
+  background-color: var(--accent-color) !important;
+}
+
+.bg-blue-700 {
+  background-color: var(--accent-color-dark) !important;
+}
+
+/* Override main dashboard container */
+.flex-1 {
+  background-color: var(--bg-primary) !important;
+}
+
+/* Override sidebar container */
+.fixed {
+  background-color: var(--bg-primary) !important;
+}
+
+/* Override all containers with bg-white */
+.bg-white {
+  background-color: var(--bg-primary) !important;
+}
+
+/* Override all containers with bg-gray-50 */
+.bg-gray-50 {
+  background-color: var(--bg-secondary) !important;
+}
+
+/* Override all containers with bg-gray-100 */
+.bg-gray-100 {
+  background-color: var(--bg-tertiary) !important;
+}
+
+/* Override table headers */
+.bg-gray-50 {
+  background-color: var(--bg-secondary) !important;
+}
+
+/* Override modal backgrounds */
+.bg-white {
+  background-color: var(--bg-primary) !important;
+}
+
+/* Override form backgrounds */
+.bg-white {
+  background-color: var(--bg-primary) !important;
+}
+
+/* Override card backgrounds */
+.bg-white {
+  background-color: var(--bg-primary) !important;
+}
+
+/* Theme-aware components */
+.theme-bg-primary {
+  background-color: var(--bg-primary);
+}
+
+.theme-bg-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.theme-bg-tertiary {
+  background-color: var(--bg-tertiary);
+}
+
+.theme-text-primary {
+  color: var(--text-primary);
+}
+
+.theme-text-secondary {
+  color: var(--text-secondary);
+}
+
+.theme-text-muted {
+  color: var(--text-muted);
+}
+
+.theme-border {
+  border-color: var(--border-color);
+}
+
+.theme-shadow {
+  box-shadow: var(--shadow);
+}
+
+.theme-shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Accent color utilities */
+.theme-accent {
+  color: var(--accent-color);
+}
+
+.theme-accent-bg {
+  background-color: var(--accent-color);
+}
+
+.theme-accent-bg-light {
+  background-color: var(--accent-color-light);
+}
+
+.theme-accent-border {
+  border-color: var(--accent-color);
+}
+
+/* Font size utilities */
+.text-small {
+  font-size: calc(var(--base-font-size) * 0.875);
+}
+
+.text-medium {
+  font-size: var(--base-font-size);
+}
+
+.text-large {
+  font-size: calc(var(--base-font-size) * 1.125);
+}
+
+.text-xl {
+  font-size: calc(var(--base-font-size) * 1.25);
+}
+
+.text-2xl {
+  font-size: calc(var(--base-font-size) * 1.5);
+}
+
+.text-3xl {
+  font-size: calc(var(--base-font-size) * 1.875);
+}
+
+/* Fix dropdown visibility in dark mode */
+select, option {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+select:focus {
+  border-color: var(--accent-color) !important;
+  box-shadow: 0 0 0 2px var(--accent-color-light) !important;
+}
+
+option {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+option:hover {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Fix placeholder text visibility */
+input::placeholder, textarea::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 0.8 !important;
+}
+
+input:focus::placeholder, textarea:focus::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 0.6 !important;
+}
+
+input:hover::placeholder, textarea:hover::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 0.9 !important;
+}
+
+/* Fix input field visibility */
+input, textarea, select {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent-color) !important;
+  box-shadow: 0 0 0 2px var(--accent-color-light) !important;
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+input:hover, textarea:hover, select:hover {
+  border-color: var(--border-color) !important;
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Fix table visibility */
+table {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+th {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+}
+
+td {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Fix modal and dropdown backgrounds */
+.modal, .dropdown, .dropdown-menu {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Fix button visibility - but preserve specific button colors */
+button {
+  color: var(--text-primary) !important;
+}
+
+/* Preserve specific action button colors */
+.text-blue-600, .text-blue-700, .text-blue-800 {
+  color: #2563eb !important;
+}
+
+.text-red-600, .text-red-700, .text-red-800 {
+  color: #dc2626 !important;
+}
+
+.text-green-600, .text-green-700, .text-green-800 {
+  color: #16a34a !important;
+}
+
+.text-orange-600, .text-orange-700, .text-orange-800 {
+  color: #ea580c !important;
+}
+
+.text-purple-600, .text-purple-700, .text-purple-800 {
+  color: #9333ea !important;
+}
+
+.text-yellow-600, .text-yellow-700, .text-yellow-800 {
+  color: #ca8a04 !important;
+}
+
+/* Preserve hover states for action buttons */
+.text-blue-600:hover, .text-blue-700:hover, .text-blue-800:hover {
+  color: #1d4ed8 !important;
+}
+
+.text-red-600:hover, .text-red-700:hover, .text-red-800:hover {
+  color: #b91c1c !important;
+}
+
+.text-green-600:hover, .text-green-700:hover, .text-green-800:hover {
+  color: #15803d !important;
+}
+
+.text-orange-600:hover, .text-orange-700:hover, .text-orange-800:hover {
+  color: #c2410c !important;
+}
+
+.text-purple-600:hover, .text-purple-700:hover, .text-purple-800:hover {
+  color: #7c3aed !important;
+}
+
+.text-yellow-600:hover, .text-yellow-700:hover, .text-yellow-800:hover {
+  color: #a16207 !important;
+}
+
+/* Fix specific text visibility issues */
+.text-gray-500, .text-gray-400, .text-gray-300 {
+  color: var(--text-secondary) !important;
+}
+
+/* Preserve action link colors in tables */
+a.text-blue-600, a.text-blue-700, a.text-blue-800 {
+  color: #2563eb !important;
+}
+
+a.text-red-600, a.text-red-700, a.text-red-800 {
+  color: #dc2626 !important;
+}
+
+a.text-green-600, a.text-green-700, a.text-green-800 {
+  color: #16a34a !important;
+}
+
+/* Preserve action link hover states */
+a.text-blue-600:hover, a.text-blue-700:hover, a.text-blue-800:hover {
+  color: #1d4ed8 !important;
+}
+
+a.text-red-600:hover, a.text-red-700:hover, a.text-red-800:hover {
+  color: #b91c1c !important;
+}
+
+a.text-green-600:hover, a.text-green-700:hover, a.text-green-800:hover {
+  color: #15803d !important;
+}
+
+/* Preserve star/favorite colors */
+.text-yellow-400, .text-yellow-500 {
+  color: #facc15 !important;
+}
+
+.text-yellow-400:hover, .text-yellow-500:hover {
+  color: #eab308 !important;
+}
+
+/* Preserve status colors */
+.text-green-500 {
+  color: #22c55e !important;
+}
+
+.text-red-500 {
+  color: #ef4444 !important;
+}
+
+.text-blue-500 {
+  color: #3b82f6 !important;
+}
+
+.text-orange-500 {
+  color: #f97316 !important;
+}
+
+.text-purple-500 {
+  color: #a855f7 !important;
+}
+
+/* Preserve button background colors */
+.bg-blue-600, .bg-blue-700 {
+  background-color: #2563eb !important;
+}
+
+.bg-red-600, .bg-red-700 {
+  background-color: #dc2626 !important;
+}
+
+.bg-green-600, .bg-green-700 {
+  background-color: #16a34a !important;
+}
+
+.bg-orange-600, .bg-orange-700 {
+  background-color: #ea580c !important;
+}
+
+.bg-purple-600, .bg-purple-700 {
+  background-color: #9333ea !important;
+}
+
+.bg-yellow-600, .bg-yellow-700 {
+  background-color: #ca8a04 !important;
+}
+
+/* Fix sidebar hover effects */
+.hover\:bg-blue-50:hover {
+  background-color: #eff6ff !important;
+}
+
+.hover\:bg-blue-100:hover {
+  background-color: #dbeafe !important;
+}
+
+.hover\:bg-gray-50:hover {
+  background-color: #f9fafb !important;
+}
+
+.hover\:bg-gray-100:hover {
+  background-color: #f3f4f6 !important;
+}
+
+/* Dark mode sidebar hover effects */
+[data-theme="dark"] .hover\:bg-blue-50:hover {
+  background-color: #1e3a8a !important;
+}
+
+[data-theme="dark"] .hover\:bg-blue-100:hover {
+  background-color: #1e40af !important;
+}
+
+[data-theme="dark"] .hover\:bg-gray-50:hover {
+  background-color: #374151 !important;
+}
+
+[data-theme="dark"] .hover\:bg-gray-100:hover {
+  background-color: #4b5563 !important;
+}
+
+/* Preserve sidebar link colors - more specific selectors */
+nav .text-gray-700, .sidebar .text-gray-700 {
+  color: #374151 !important;
+}
+
+nav .text-gray-500, .sidebar .text-gray-500 {
+  color: #6b7280 !important;
+}
+
+/* Dark mode sidebar text colors */
+[data-theme="dark"] nav .text-gray-700, [data-theme="dark"] .sidebar .text-gray-700 {
+  color: #d1d5db !important;
+}
+
+[data-theme="dark"] nav .text-gray-500, [data-theme="dark"] .sidebar .text-gray-500 {
+  color: #9ca3af !important;
+}
+
+/* Fix sidebar navigation hover states */
+nav button:hover, .sidebar button:hover {
+  background-color: #eff6ff !important;
+  color: #1e40af !important;
+}
+
+[data-theme="dark"] nav button:hover, [data-theme="dark"] .sidebar button:hover {
+  background-color: #1e3a8a !important;
+  color: #dbeafe !important;
+}
+
+/* Fix active sidebar states */
+nav button.bg-blue-100, .sidebar button.bg-blue-100 {
+  background-color: #dbeafe !important;
+  color: #1e40af !important;
+}
+
+[data-theme="dark"] nav button.bg-blue-100, [data-theme="dark"] .sidebar button.bg-blue-100 {
+  background-color: #1e40af !important;
+  color: #dbeafe !important;
+}
+
+/* Fix header buttons for light mode */
+.bg-gray-600 {
+  background-color: #f3f4f6 !important;
+  color: #374151 !important;
+  border: 1px solid #d1d5db !important;
+}
+
+.bg-gray-600:hover {
+  background-color: #e5e7eb !important;
+  color: #1f2937 !important;
+}
+
+.bg-blue-600 {
+  background-color: #3b82f6 !important;
+  color: white !important;
+}
+
+.bg-blue-600:hover {
+  background-color: #2563eb !important;
+  color: white !important;
+}
+
+/* Dark mode header buttons (keep current styling) */
+[data-theme="dark"] .bg-gray-600 {
+  background-color: #4b5563 !important;
+  color: #f9fafb !important;
+  border: 1px solid #6b7280 !important;
+}
+
+[data-theme="dark"] .bg-gray-600:hover {
+  background-color: #6b7280 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .bg-blue-600 {
+  background-color: #2563eb !important;
+  color: white !important;
+}
+
+[data-theme="dark"] .bg-blue-600:hover {
+  background-color: #1d4ed8 !important;
+  color: white !important;
+}
+
+/* Fix CGPA calculator display section */
+.bg-gradient-to-r {
+  background: linear-gradient(to right, #3b82f6, #9333ea) !important;
+}
+
+.bg-gradient-to-br {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6) !important;
+}
+
+/* CGPA display text colors - force white text on gradient backgrounds */
+.bg-gradient-to-r .text-white,
+.bg-gradient-to-br .text-white {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.bg-gradient-to-r .text-red-500,
+.bg-gradient-to-r .text-red-600,
+.bg-gradient-to-br .text-red-500,
+.bg-gradient-to-br .text-red-600 {
+  color: #fecaca !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Ensure all text in gradient containers is white */
+.bg-gradient-to-r,
+.bg-gradient-to-br {
+  color: #ffffff !important;
+}
+
+.bg-gradient-to-r *,
+.bg-gradient-to-br * {
+  color: #ffffff !important;
+}
+
+/* Override any theme text colors in gradient containers */
+.bg-gradient-to-r .text-gray-800,
+.bg-gradient-to-r .text-gray-700,
+.bg-gradient-to-r .text-gray-600,
+.bg-gradient-to-br .text-gray-800,
+.bg-gradient-to-br .text-gray-700,
+.bg-gradient-to-br .text-gray-600 {
+  color: #ffffff !important;
+}
+
+/* Dark mode CGPA display - same rules apply */
+[data-theme="dark"] .bg-gradient-to-r,
+[data-theme="dark"] .bg-gradient-to-br {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .bg-gradient-to-r *,
+[data-theme="dark"] .bg-gradient-to-br * {
+  color: #ffffff !important;
+}
+
+/* Fix dropdown menu visibility */
+.dropdown-menu, .dropdown-content {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.dropdown-item {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+.dropdown-item:hover {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Fix select dropdown options */
+select option {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+select option:checked {
+  background-color: var(--accent-color) !important;
+  color: white !important;
+}
+
+/* Fix form elements */
+.form-control, .form-input {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.form-control:focus, .form-input:focus {
+  border-color: var(--accent-color) !important;
+  box-shadow: 0 0 0 2px var(--accent-color-light) !important;
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
