@@ -9,7 +9,7 @@ const swaggerJsdoc = require('swagger-jsdoc');
 dotenv.config();
 
 // Connect to database
-const mongoURI = process.env.MONGODB_URI || 'mongodb+srv://Chirag:chirag123@cluster0.ltuot3p.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const mongoURI = process.env.MONGODB_URI || ;
 console.log('Using MongoDB URI:', mongoURI ? 'Found' : 'Not found');
 mongoose.connect(mongoURI)
   .then(() => console.log('MongoDB Connected'))
