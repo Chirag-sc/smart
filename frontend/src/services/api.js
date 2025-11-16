@@ -5,7 +5,7 @@ const cache = new Map();
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
 // Resolve base URLs from Vite environment
-const VITE_BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+const VITE_BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'https://acad-sync-backend-v2fu.onrender.com';
 const normalizedBackendUrl = VITE_BACKEND_URL.replace(/\/$/, '');
 
 // Create an axios instance with default config
