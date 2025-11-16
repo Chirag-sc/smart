@@ -358,7 +358,7 @@ const ProfileSettings = ({ isOpen, onClose }) => {
                     />
                   ) : profilePicture?.url ? (
                     <img
-                      src={`http://localhost:5000${profilePicture.url}`}
+                      src={`https://acad-sync-backend-v2fu.onrender.com${profilePicture.url}`}
                       alt="Profile"
                       className="w-full h-full object-cover"
                     />
