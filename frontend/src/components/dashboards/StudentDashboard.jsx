@@ -9,7 +9,7 @@ import teacherAPI from '../../services/teacherAPI';
 import CGPACalculator from '../CGPACalculator';
 import CIECalculator from '../CIECalculator';
 
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'https://acad-sync-backend-v2fu.onrender.com';
 
 const StudentDashboard = () => {
   const [activeTab, setActiveTab] = useState('overview');
