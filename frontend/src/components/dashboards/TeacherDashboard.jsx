@@ -11,7 +11,7 @@ import CGPACalculator from '../CGPACalculator';
 import CIECalculator from '../CIECalculator';
 // import IntegrationManager from '../IntegrationManager';
 
-const BACKEND_URL = 'http://localhost:5000';
+const BACKEND_URL = 'https://acad-sync-backend-v2fu.onrender.com';
 
 const TeacherDashboard = () => {
   const [activeTab, setActiveTab] = useState('overview');
