@@ -1,6 +1,6 @@
 import api from './api';
 
-const BACKEND_URL = 'http://localhost:5000';
+const BACKEND_URL = 'https://acad-sync-backend-v2fu.onrender.com';
 
 // Teacher API
 export const teacherAPI = {
